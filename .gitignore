@@ -1,0 +1,19 @@
+# No subir configuraciones sensibles
+/config.php
+
+# Moodle data (archivos de usuarios y caché)
+moodledata/
+
+# Archivos temporales y caché
+/tmp/
+/cache/
+/localcache/
+
+# Logs y respaldos
+*.log
+backup/
+*.zip
+
+# Otros archivos del sistema
+.DS_Store
+Thumbs.db

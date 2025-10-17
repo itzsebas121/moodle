@@ -1,0 +1,459 @@
+//
+// This file is part of Adaptable theme for moodle
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+//
+//
+// Adaptable main CSS file
+//
+// @package    theme_adaptable
+// @copyright  2015-2019 Jeremy Hopkins (Coventry University)
+// @copyright  2015-2019 Fernando Acedo (3-bits.com)
+// @copyright  2018-2019 Manoj Solanki (Coventry University)
+//
+// @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+//
+
+// Main elements selectors.
+html,
+body,
+.body {
+    background-color: var(--ad-main-colour);
+    color: var(--ad-font-colour);
+    font-family: [[setting:fontname]];
+    font-weight: [[setting:fontweight]];
+}
+
+html,
+body {
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+}
+
+// Headings.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: [[setting:fontheadercolor]];
+    font-family: [[setting:fontheadername]];
+    font-weight: [[setting:fontheaderweight]];
+}
+
+// Links.
+a:not(.btn, .dropdown-item, .quickeditlink),
+a:not(.btn, .dropdown-item, .quickeditlink):visited,
+.tabtree .tabrow0 li a {
+    color: var(--ad-link-colour);
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: var(--ad-linkhover-colour);
+    text-decoration: none;
+}
+
+a:focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+// Text Selection.
+::selection,
+::-moz-selection {
+    background-color: var(--ad-selectionbackground-colour);
+    color: var(--ad-selectiontext-colour);
+}
+
+// Main headings.
+.headingblock, h2.main,
+#site-news-forum h2,
+#frontpage-course-list h2,
+#frontpage-category-names h2,
+#frontpage-category-combo h2,
+.course_category_tree .category > .info > .categoryname {
+    border-bottom: 0 solid #eee;
+    color: [[setting:fontheadercolor]];
+    font-family: [[setting:fontheadername]] !important;
+    font-size: 24px;
+    font-weight: [[setting:fontheaderweight]] !important;
+    margin-bottom: 20px;
+}
+
+.generalbox h2,
+h3.sectionname,
+div.tabtree li.selected a span,
+.forumpost .subject,
+.blog_entry div.subject a,
+h2.headingblock,
+h2.main,
+h3.main,
+h2.main a,
+h3.main a,
+div.loginpanel h2,
+div.signuppanel h2 {
+    font-weight: bold;
+}
+
+#region-main {
+    background-color: $body-bg;
+    border: none;
+    color: var(--ad-regionmaintext-colour);
+    transition: all .5s ease-in-out;
+}
+
+// Dimmed text (courses or users).
+.dimmed,
+a.dimmed,
+a.dimmed:link,
+a.dimmed:visited,
+a.dimmed_text,
+a.dimmed_text:link,
+a.dimmed_text:visited,
+.dimmed_text,
+.dimmed_text a,
+.dimmed_text a:link,
+.dimmed_text a:visited,
+.usersuspended,
+.usersuspended a,
+.usersuspended a:link,
+.usersuspended a:visited,
+.dimmed_category,
+.dimmed_category a {
+    color: var(--ad-dimmedtext-colour) !important;
+}
+
+// Ref: install_print_header().
+.headermenu {
+    color: #ccc;
+    float: right;
+    font-size: 12px;
+    margin-left: 15px;
+    padding-top: 0;
+    padding-right: 0;
+    text-align: right;
+
+    span.fa.fa-angle-down {
+        font-size: 13px;
+        padding-left: 5px;
+    }
+
+    input[name=username],
+    input[name=password] {
+        height: 12px;
+        padding-bottom: 4px;
+    }
+}
+
+.slidewrap {
+    margin-bottom: [[setting:slidermarginbottom]];
+    margin-top: [[setting:slidermargintop]];
+}
+
+#frontblockregion {
+    background-color: [[setting:blockregionbackgroundcolor]];
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.flexibleblocks,
+#marketblocks {
+    background-color: [[setting:marketblocksbackgroundcolor]];
+    padding-bottom: 10px;
+
+    h3 {
+        font-size: 24px;
+        font-weight: normal;
+        line-height: 48px;
+        margin: 10px auto;
+    }
+}
+
+#marketblocks .internalmarket {
+    border-color: [[setting:marketblockbordercolor]];
+    border-style: solid;
+    border-width: 0 1px 1px 1px;
+    padding: 10px 15px 30px;
+    text-align: center;
+}
+
+.flexiblerow,
+.marketrow {
+    margin-top: 20px;
+}
+
+.editing-flexible-blocks,
+.flexible-blocks-overflow {
+    column-gap: 0.25rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+
+    .block {
+        flex: 0 0 calc(25% - 0.5rem);
+        max-width: 25%;
+    }
+}
+
+.flexible-blocks-overflow {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+// When using filter_emoticon to add the extra markup.  Thus have to type the characters.
+img.emoticon {
+    height: [[setting:emoticonsize]];
+    width: [[setting:emoticonsize]];
+}
+
+#frontpage-course-list h2 {
+    display: [[setting:enableavailablecourses]];
+}
+
+.info nav ul li {
+    border: medium none;
+    display: inline-block;
+    float: left;
+
+    a {
+        border-right: 1px solid #666;
+        margin: auto;
+        padding: 0.1em .8em;
+    }
+}
+
+
+.mrl,
+.mhl,
+.mal {
+    margin-right: 20px !important;
+}
+.mtm,
+.mvm,
+.mam {
+    margin-top: 10px !important;
+}
+
+.separator {
+    margin: 9px;
+    i {
+        margin-left: 5px;
+    }
+}
+
+.arrow-top {
+    border-bottom: 18px solid transparent;
+    border-left: 17px solid [[setting:breadcrumb]];
+    border-top: 17px solid transparent;
+    height: 0;
+    position: absolute;
+    right: -17px;
+    top: 0;
+    width: 0;
+    z-index: 1;
+}
+
+.arrow-bottom {
+    border-bottom: 18px solid transparent;
+    border-left: 17px solid #fff;
+    border-top: 17px solid transparent;
+    height: 0;
+    position: absolute;
+    right: -18px;
+    top: 0;
+    width: 0;
+}
+
+div.redirectmessage {
+    background: #fff url([[pix:theme|ajax-loader]]) no-repeat 50% 95%;
+    border: none solid transparent;
+    font-size: 13px;
+    margin: 10px auto 0 auto;
+    padding: 20px 20px 40px;
+    width: 60%;
+}
+
+// Show modal pop-up.
+#notice {
+    border-color: #e5e5e5;
+    margin: 30px auto;
+    min-width: 220px;
+    padding: 5px;
+    text-align: center;
+    width: 70%;
+
+    h4 {
+        font-size: 24px;
+        font-weight: bold !important;
+        margin-bottom: 20px;
+    }
+
+    &.box {
+        background-color: [[setting:alertbackgroundcolorinfo]];
+        border: none;
+        color: [[setting:alertcolorinfo]];
+        font-size: 18px;
+        padding: 15px;
+        margin-top: 100px;
+    }
+}
+
+.pagelayout-redirect {
+    #page-content {
+        background-color: #fff;
+        border: 1px solid #dadada;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+        padding: 1em;
+        margin: 20px auto 0;
+        text-align: center;
+        width: 80%;
+    }
+
+    #page {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+        box-shadow: none;
+        max-width: inherit;
+        padding: 0;
+    }
+}
+
+#page-mod-forum-post #id_subject {
+    width: 100%;
+}
+
+// Admin errors.
+.adminerror {
+    background-color: #f2dede;
+    border-color: #ebcccc;
+    border-radius: 0.25rem;
+    color: #a94442;
+    margin-bottom: 1rem;
+    margin-top: 50px;
+    padding: 0.75rem 1.25rem;
+}
+
+.notifytiny {
+    background-color: #f2dede;
+    border-color: #ebcccc;
+    border-radius: 0.25rem;
+    color: #a94442;
+    font-family: monospace;
+    font-size: 14px;
+    margin: 1rem;
+    padding: 0.75rem 1.25rem;
+}
+
+.container {
+    transition: width .5s ease-in-out;
+}
+
+#zoominicon {
+    cursor: pointer;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+}
+
+.collapsibleregioncaption {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+// Hidden admin blocks.
+.hidden-blocks {
+    background-color: rgba(255, 154, 154, 0.5);
+    padding: 7px 7px;
+
+    .block {
+        float: right;
+        margin-left: 10px;
+        width: 250px;
+    }
+
+    h3 {
+        border-bottom: 1px solid #e8eaeb;
+        color: #ff0000;
+        margin-left: 10px;
+        text-shadow: 1px 1px 2px #fff;
+    }
+
+    .block-region .block {
+        margin: 0 10px;
+        width: 25%;
+
+        .header {
+            border-top: 0;
+        }
+    }
+}
+
+.rcs-search {
+    margin: auto 0 0 5px;
+}
+
+// Fix Video Player icons.
+.vjs-icon-play::before,
+.video-js .vjs-big-play-button::before,
+.video-js .vjs-play-control::before,
+.vjs-icon-fullscreen-enter::before,
+.video-js .vjs-fullscreen-control::before {
+    font-family: videojs;
+}
+
+// Plugins installation status.
+.status-upgrade {
+    background-color: #d9edf7;
+}
+
+.status-new {
+    background-color: #dff0d8;
+}
+
+#savediscardsection {
+    background-color: #eee;
+    filter: alpha(opacity=80);
+    min-height: 30px;
+    opacity: 0.8;
+    padding: 10px;
+    position: fixed; // For IE8 and earlier.
+    top: 10px;
+    width: 100%;
+
+    .form-reset,
+    .form-submit {
+        float: right;
+    }
+
+    .form-submit {
+        margin-right: 20px;
+    }
+}
+
+// Info icon.
+.text-info {
+    color: [[setting:infoiconcolor]] !important;
+}
+
+.text-danger .icon,
+.notconnected,
+.que .validationerror,
+.text-error {
+    color: [[setting:dangericoncolor]] !important;
+}
+
+[[setting:loginbgopacity]]

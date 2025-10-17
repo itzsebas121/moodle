@@ -1,0 +1,142 @@
+//
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+//
+//
+// Adaptable search and social style sheet
+//
+// @package    theme_adaptable
+// @copyright  2021 G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}
+// @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+//
+
+.headersearch {
+    padding: [[setting:searchboxpadding]];
+
+    abbr[title] {
+        border-bottom: none;
+        cursor: pointer;
+        text-decoration: none;
+    }
+}
+
+.headersearch,
+.navbarsearchsocial {
+    .btn {
+        box-shadow: none;
+    }
+
+    .btn-close {
+        border-width: 0;
+        .icon {
+            vertical-align: middle;
+        }
+    }
+}
+
+.headersearch .form-inline,
+.navbarsearchsocial .form-inline,
+#adaptable-page-header-wrapper .above-header .navbar .navbarsearchsocial button {
+    margin: 0;
+}
+
+.headersearch .form-inline input.form-control[type=text],
+.navbarsearchsocial .form-inline input.form-control[type=text] {
+    height: 35px;
+}
+
+#adaptable-page-header-wrapper {
+    .navbarsearchsocial form,
+    .headersearch .show {
+        .icon {
+            color: var(--ad-font-colour);
+            font-size: 16px;
+        }
+    }
+}
+
+.headersearch .simplesearchform .btn-submit,
+#adaptable-page-header-wrapper .above-header .navbar .navbarsearchsocial button {
+    border-radius: 0;
+}
+
+#adaptable-page-header-wrapper .navbarsearchsocial {
+    .btn-open {
+        border-width: 0;
+
+        .icon {
+            font-size: 16px;
+        }
+    }
+
+    button .icon {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
+
+.simplesearchform {
+    .btn-close {
+        background-image: none;
+        box-sizing: content-box; // From BS5.
+        height: 1em; // From BS5.
+        width: 1em; // From BS5.
+    }
+    .btn-close,
+    .btn-clear {
+        bottom: auto;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .icon {
+            vertical-align: top;
+        }
+    }
+
+    .collapse.show,
+    .collapsing {
+        background-color: transparent;
+        height: auto;
+        position: relative;
+    }
+}
+
+.socialbox {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    vertical-align: middle;
+
+    a,
+    a:visited {
+        color: [[setting:headermainrowtextcolour]];
+    }
+}
+
+.socialicons {
+    padding-top: [[setting:socialpaddingtop]];
+    a {
+        // Make at least 29px, values look odd but on inspection they are needed to be so for FontAwesome.
+        font-size: [[setting:socialsize]];
+        line-height: [[setting:socialsize]];
+        padding-left: [[setting:socialpaddingsidehalf]]px;
+        padding-right: [[setting:socialpaddingsidehalf]]px;
+        &:first-of-type {
+            margin-left: [[setting:socialpaddingsidehalf]]px;
+        }
+        &:last-of-type {
+            margin-right: [[setting:socialpaddingsidehalf]]px;
+        }
+    }
+}
